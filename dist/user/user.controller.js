@@ -17,11 +17,10 @@ const common_1 = require("@nestjs/common");
 const create_user_dto_1 = require("./dto/create-user.dto");
 let UserController = class UserController {
     getUsers() {
-        return "hello users";
+        return { "hello": "world" };
     }
     createUsers(user) {
-        console.log(user.title, user.description, user.done);
-        return "creating users";
+        return "hello";
     }
     updateUsers() {
         return "invocando users";
@@ -34,7 +33,7 @@ __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
+    __metadata("design:returntype", Object)
 ], UserController.prototype, "getUsers", null);
 __decorate([
     (0, common_1.Post)(),

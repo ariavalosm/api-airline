@@ -6,8 +6,8 @@ import { CreateUserDto } from './dto/create-user.dto';
 export class UserController {
   
   @Get()
-  getUsers(): string{
-    return "hello users";
+  getUsers():{hello: string}{
+    return {"hello": "world"} ;
   }
 
   @Post()
