@@ -30,4 +30,13 @@ export class UserService {
       docnumber: 1234567
     },
   ];
+
+  getUsers(){
+    return this.users;
+  }
+
+  getUser(id){
+    return this.users.find(user => user.id === id);
+
+  }
 }
