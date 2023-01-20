@@ -13,6 +13,15 @@ exports.UserController = void 0;
 const common_1 = require("@nestjs/common");
 let UserController = class UserController {
     getUsers() {
+        return "hello users";
+    }
+    createUsers() {
+        return "creating users";
+    }
+    updateUsers() {
+        return "invocando users";
+    }
+    deleteUsers() {
         return "retrieving users";
     }
 };
@@ -22,6 +31,24 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", String)
 ], UserController.prototype, "getUsers", null);
+__decorate([
+    (0, common_1.Post)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], UserController.prototype, "createUsers", null);
+__decorate([
+    (0, common_1.Put)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], UserController.prototype, "updateUsers", null);
+__decorate([
+    (0, common_1.Delete)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], UserController.prototype, "deleteUsers", null);
 UserController = __decorate([
     (0, common_1.Controller)('user')
 ], UserController);
