@@ -12,8 +12,7 @@ export class UserController {
 
   @Post()
   createUsers(@Body() user: CreateUserDto): string{
-    console.log(user)
-    return "creating users";
+    return "hello";
   }
 
 
