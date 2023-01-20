@@ -31,11 +31,11 @@ export class UserService {
     },
   ];
 
-  getUsers(){
+  getUsers() :user[]{
     return this.users;
   }
 
-  getUser(id){
+  getUser(id) :user{
     return this.users.find(user => user.id === id);
 
   }
