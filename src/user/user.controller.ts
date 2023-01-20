@@ -11,8 +11,6 @@ export class UserController {
     return {"hello": "world"} ;
   }
    
-  
-
   @Post()
   createUser(@Body() user: CreateUserDto): string{
     return "hello";
