@@ -3,7 +3,7 @@ export declare class UserController {
     getUsers(): {
         hello: string;
     };
-    createUsers(user: CreateUserDto): string;
-    deleteUsers(id: any): string;
-    updateUsers(user: CreateUserDto, id: any): string;
+    createUser(user: CreateUserDto): string;
+    deleteUser(id: any): string;
+    updateUser(user: CreateUserDto, id: any): string;
 }
