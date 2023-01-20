@@ -1,11 +1,25 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get , Post , Put , Delete } from '@nestjs/common';
 
 @Controller('user')
 export class UserController {
   
   @Get()
-  getUsers(){
-    return "retrieving users"
+  getUsers(): string{
+    return "hello users";
   }
 
+  @Post()
+  createUsers(): string{
+    return "creating users";
+  }
+
+  @Put()
+  updateUsers(): string{
+    return "invocando users";
+  }
+
+  @Delete()
+  deleteUsers(): string{
+    return "retrieving users";
+  }
 }
