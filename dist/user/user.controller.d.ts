@@ -4,6 +4,6 @@ export declare class UserController {
         hello: string;
     };
     createUsers(user: CreateUserDto): string;
-    updateUsers(): string;
-    deleteUsers(): string;
+    deleteUsers(id: any): string;
+    updateUsers(user: CreateUserDto, id: any): string;
 }

@@ -22,11 +22,14 @@ let UserController = class UserController {
     createUsers(user) {
         return "hello";
     }
-    updateUsers() {
-        return "invocando users";
+    deleteUsers(id) {
+        console.log(id);
+        return `deleting users: ${id}`;
     }
-    deleteUsers() {
-        return "retrieving users";
+    updateUsers(user, id) {
+        console.log(user);
+        console.log(id);
+        return "invocando users";
     }
 };
 __decorate([
@@ -43,17 +46,20 @@ __decorate([
     __metadata("design:returntype", String)
 ], UserController.prototype, "createUsers", null);
 __decorate([
-    (0, common_1.Put)(),
+    (0, common_1.Delete)(":id"),
+    __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], UserController.prototype, "updateUsers", null);
-__decorate([
-    (0, common_1.Delete)(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", String)
 ], UserController.prototype, "deleteUsers", null);
+__decorate([
+    (0, common_1.Put)(":id"),
+    __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Param)("id")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_user_dto_1.CreateUserDto, Object]),
+    __metadata("design:returntype", String)
+], UserController.prototype, "updateUsers", null);
 UserController = __decorate([
     (0, common_1.Controller)('user')
 ], UserController);

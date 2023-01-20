@@ -1,3 +1,4 @@
+import { enumBooleanBody } from '@babel/types';
 import { Controller, Get , Post , Put , Delete, Body, Param } from '@nestjs/common';
 
 import { CreateUserDto } from './dto/create-user.dto';
@@ -21,8 +22,10 @@ export class UserController {
   return `deleting users: ${id}`;
   }
 
-  @Put()
-  updateUsers(): string{
+  @Put(":id")
+  updateUsers(@Body() user: CreateUserDto , @Param("id") id): string{
+    console.log(user)
+    console.log(id)
     return "invocando users";
   }
 
