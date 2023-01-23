@@ -1,6 +1,6 @@
 import { Controller, Get , Post , Put , Delete, Body, Param , Req , Res} from '@nestjs/common';
 
-import { user } from "./interfaces/user";
+import { User } from "./interfaces/user";
 import { CreateUserDto } from './dto/create-user.dto';
 import { UsersService } from "./user.service";
 import { parse } from 'path';
@@ -16,14 +16,8 @@ export class UserController {
   }
 
   @Get()
-  getUsers() :user[]{
-    return this.userService.getUsers();
-  }
 
-  @Get(":userId")
-  getUser(@Param("userId") userId: string){
-    return this.userService.getUser(parseInt(userId));
-  }
+
    
   @Post()
   createUser(@Body() user: CreateUserDto): string{
