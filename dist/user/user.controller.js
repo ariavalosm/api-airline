@@ -20,8 +20,11 @@ let UserController = class UserController {
     constructor(userService) {
         this.userService = userService;
     }
-    getUsers(userId) {
+    getUsers() {
         return this.userService.getUsers();
+    }
+    getUser(userId) {
+        return this.userService.getUser(parseInt(userId));
     }
     createUser(user) {
         return "hello";
@@ -37,12 +40,18 @@ let UserController = class UserController {
     }
 };
 __decorate([
+    (0, common_1.Get)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Array)
+], UserController.prototype, "getUsers", null);
+__decorate([
     (0, common_1.Get)(":userId"),
     __param(0, (0, common_1.Param)("userId")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
-], UserController.prototype, "getUsers", null);
+], UserController.prototype, "getUser", null);
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),

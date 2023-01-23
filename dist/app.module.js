@@ -13,11 +13,12 @@ const app_service_1 = require("./app.service");
 const user_controller_1 = require("./user/user.controller");
 const user_module_1 = require("./user/user.module");
 const user_service_1 = require("./user/user.service");
+const mongoose_1 = require("@nestjs/mongoose");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [user_module_1.UserModule],
+        imports: [user_module_1.UserModule, mongoose_1.MongooseModule.forRoot('mongodb://localhost/airlines-api')],
         controllers: [app_controller_1.AppController, user_controller_1.UserController],
         providers: [app_service_1.AppService, user_service_1.UsersService],
     })

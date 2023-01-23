@@ -7,7 +7,10 @@ import { UsersService } from './user/user.service';
 import { MongooseModule } from "@nestjs/mongoose";
 
 @Module({
-  imports: [UserModule, MongooseModule ],
+  imports: [UserModule, MongooseModule.forRoot(
+    'mongodb+srv://ari-airline:xfPxLw6YxpYG2Nj0@airline-api.byb9q0b.mongodb.net/airlines-api?retryWrites=true&w=majority'
+    ),
+  ],
   controllers: [AppController, UserController],
   providers: [AppService, UsersService],
 })
