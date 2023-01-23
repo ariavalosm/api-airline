@@ -18,7 +18,8 @@ let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [user_module_1.UserModule, mongoose_1.MongooseModule.forRoot('mongodb://localhost/airlines-api')],
+        imports: [user_module_1.UserModule, mongoose_1.MongooseModule.forRoot('mongodb+srv://ari-airline:xfPxLw6YxpYG2Nj0@airline-api.byb9q0b.mongodb.net/airlines-api?retryWrites=true&w=majority'),
+        ],
         controllers: [app_controller_1.AppController, user_controller_1.UserController],
         providers: [app_service_1.AppService, user_service_1.UsersService],
     })
