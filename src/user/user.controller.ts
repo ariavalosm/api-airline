@@ -14,8 +14,8 @@ export class UserController {
 
   }
 
-  @Get()
-  getUsers() :user[]{
+  @Get(":userId")
+  getUsers(@Param("userId")) :user[]{
     return this.userService.getUsers();
   }
    
