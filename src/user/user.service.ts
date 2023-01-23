@@ -35,7 +35,7 @@ export class UsersService {
     return this.users;
   }
 
-  getUser(id) :user{
+  getUser(id: number) :user{
     return this.users.find(user => user.id === id);
 
   }

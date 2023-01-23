@@ -20,7 +20,7 @@ let UserController = class UserController {
     constructor(userService) {
         this.userService = userService;
     }
-    getUsers() {
+    getUsers(userId) {
         return this.userService.getUsers();
     }
     createUser(user) {
@@ -37,10 +37,11 @@ let UserController = class UserController {
     }
 };
 __decorate([
-    (0, common_1.Get)(),
+    (0, common_1.Get)(":userId"),
+    __param(0, (0, common_1.Param)("userId")),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Array)
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
 ], UserController.prototype, "getUsers", null);
 __decorate([
     (0, common_1.Post)(),
