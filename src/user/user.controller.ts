@@ -3,6 +3,7 @@ import { Controller, Get , Post , Put , Delete, Body, Param , Req , Res} from '@
 import { user } from "./interfaces/user";
 import { CreateUserDto } from './dto/create-user.dto';
 import { UsersService } from "./user.service";
+import { parse } from 'path';
 
 // needs to fix the usersService - it's broken 
 
@@ -14,9 +15,14 @@ export class UserController {
 
   }
 
-  @Get(":userId")
-  getUsers(@Param("userId") userId: string){
+  @Get()
+  getUsers() :user[]{
     return this.userService.getUsers();
+  }
+
+  @Get(":userId")
+  getUser(@Param("userId") userId: string){
+    return this.userService.getUser(parseInt(userId));
   }
    
   @Post()
